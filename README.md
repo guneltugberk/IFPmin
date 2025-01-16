@@ -69,7 +69,7 @@ model.MonteCarloStorage(num_simulations=10000, output_dir="Simulation")
 
 ### Monte Carlo Analysis Plot
 
-![Monte Carlo Analysis](Monte_Carlo_with_Dolomite.pdf)
+![Monte Carlo Analysis](output.png)
 
 The Monte Carlo plot shows the probability distribution of storage capacities with annotations for P10, P50, and P90 values.
 
