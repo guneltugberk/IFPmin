@@ -75,7 +75,7 @@ The Monte Carlo plot shows the probability distribution of storage capacities wi
 
 ---
 
-### Ratio Comparison Plot
+### Dissolution vs Precipitation Comparison Plot
 
 ![Ratio Comparison](ratio.png)
 
