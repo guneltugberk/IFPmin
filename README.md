@@ -18,7 +18,7 @@ IFPMin is a Python-based tool designed for simulating and analyzing CO2 storage 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-repo/IFPMin.git
+   git clone https://github.com/guneltugberk/IFPMin.git
    ```
 2. Install dependencies:
    ```bash
