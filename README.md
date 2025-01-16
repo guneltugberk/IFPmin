@@ -77,7 +77,7 @@ The Monte Carlo plot shows the probability distribution of storage capacities wi
 
 ### Ratio Comparison Plot
 
-![Ratio Comparison](Ratio_Plot_with_Dolomite.pdf)
+![Ratio Comparison](ratio.png)
 
 The scatter plot compares the initial and final mineral volumes with a 45-degree reference line and categorized points.
 
