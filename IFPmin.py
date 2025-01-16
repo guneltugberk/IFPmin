@@ -29,7 +29,7 @@ class IFPMin:
             temperature (float, optional): Temperature for the simulation (°C). Default is 40.0.
             pressure (float, optional): Pressure for the simulation (bar). Default is 249.
         """
-        
+
         self.input_data = input_data
         self.simulation_result = simulation_result
         self.target = target
@@ -45,6 +45,21 @@ class IFPMin:
         self.sw_min = sw_min if sw_min is not None else self.DEFAULT_SW_MIN
         self.sw_max = sw_max if sw_max is not None else self.DEFAULT_SW_MAX
 
+    
+    def update_simulation_conditions(self, temperature=None, pressure=None):
+        """
+        Update the simulation conditions dynamically.
+
+        Args:
+            temperature (float, optional): New temperature for the simulation (°C).
+            pressure (float, optional): New pressure for the simulation (bar).
+        """
+        if temperature is not None:
+            self.temperature = temperature
+            logging.info(f"Updated temperature to {self.temperature} °C.")
+        if pressure is not None:
+            self.pressure = pressure
+            logging.info(f"Updated pressure to {self.pressure} bar.")
 
 
     def generate_simulation_files(self, output_dir="Simulation", num_simulation=1000):
