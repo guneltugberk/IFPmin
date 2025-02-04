@@ -178,7 +178,7 @@ Where:
 - **Mechanical Skin** is your input (e.g., 0.0).  
 - **Rate Dependent Skin** accounts for non-Darcy effects.  
 - **Effective Skin** is the sum of mechanical skin and rate-dependent skin.  
-- **Injectivity Index** is given in units of `tonnes CO2/bar²·year` or similar (depending on your code’s final calculation).
+- **Injectivity Index** is given in units of `tonnes CO2/bar²·year`.
 
 ---
 
