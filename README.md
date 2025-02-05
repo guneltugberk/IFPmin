@@ -118,7 +118,7 @@ What happens here:
 ifp.plot_ratio_comparison(output_dir="Simulation")
 ```
 
-This creates a scatter plot comparing the initial vs. final volumes, saved as **`ratio.png`** (or a similarly named file such as `Ratio_Plot_with_Dolomite.pdf` depending on your settings). An example figure might look like this:
+This creates a scatter plot comparing the initial vs. final volumes, saved as **`ratio.png`**. An example figure might look like this:
 
 ![Ratio Plot](ratio.png)
 
@@ -153,7 +153,8 @@ inject = IFlowP(
     pressure=250,     # bar
     temperature=40,   # °C
     porosity=0.05,    # 5%
-    Pinj=270          # Injection pressure (psia or bar, depending on how you're defining units)
+    Pinj=270,         # Injection pressure (psia or bar, depending on how you're defining units)
+    target=1e6        # Storage objective in tonnes of CO2
 )
 
 result = inject.co2_injectivity(k=3, h=600, rw=0.15, skin=0)
@@ -162,16 +163,20 @@ result = inject.co2_injectivity(k=3, h=600, rw=0.15, skin=0)
 Upon execution, you may see a result table such as:
 
 ```
-============================================
-|        CO2 Analytical Simulation         |
-============================================
-|                 Results                  |
-============================================
-|    Mechanical Skin     =         0.00    |
-|    Rate Dependent Skin =         1.88    |
-|    Effective Skin      =         1.88    |
-|    Injectivity Index   =      1613.70    |
-============================================
+=======================================================================================
+|                              CO2 Analytical Simulation                              |
+=======================================================================================
+|                                       Results                                       |
+=======================================================================================
+|   Parameter                               Value                             Units   |
+---------------------------------------------------------------------------------------
+|   Mechanical Skin                          0.00                     Dimensionless   |
+|   Rate Dependent Skin                      1.88                     Dimensionless   |
+|   Effective Skin                           1.88                     Dimensionless   |
+|   Injectivity Index                        3.25           tonnes CO₂/bar².cp.year   |
+|   Target Storage                       1.00e+06                        tonnes CO₂   |
+|   Number of Wells                          2.00                            -        |
+=======================================================================================
 ```
 
 Where:
@@ -179,6 +184,8 @@ Where:
 - **Rate Dependent Skin** accounts for non-Darcy effects.  
 - **Effective Skin** is the sum of mechanical skin and rate-dependent skin.  
 - **Injectivity Index** is given in units of `tonnes CO2/bar²·year`.
+- **Target Storage** is the objective of storage in tonnes of CO2.
+- **Number of Wells** is the estimated approximate required number of wells.
 
 ---
 
