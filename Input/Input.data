@@ -1,0 +1,43 @@
+-------------------------------------------------------------------------
+-- Target storage and fluid type
+-------------------------------------------------------------------------
+TARGET
+SPC     1000e6             0          25 			-- In order, injection style (only supercritical available), storage objective per year in tonnes, initial time in years, final time
+TARGET /
+ 
+-------------------------------------------------------------------------
+-- Simulation Type
+-------------------------------------------------------------------------
+SIMTYPE           						-- Initialization of simulation type indication
+
+PATH								-- Input and ArXim paths
+Input arxim-windows.exe
+
+PATH /
+
+CRTSIM            						-- Create simulation files, requires ‘Minerology.min file’
+STGSIM            						-- Storage Capacity Simulation, requires processed thermodynamic simulation result from TDYNSIM
+INJSIM 34 0           						-- Injectivity Simulation, requires RESPROP and WELLSPEC sections
+ 
+SIMTYPE /
+ 
+-------------------------------------------------------------------------
+-- Reservoir Properties
+-------------------------------------------------------------------------
+RESPROP
+170      306      51        2.5e-6  4.0e-4              PSS     -- In order: Reservoir pressure in bar, fracture pressure in bar, temperature in Celsius, rock compressibility 1/bar, water compressibility 1/bar, flow regime
+ 
+PETRO                        					-- Keyword for petrophysical properties, in order: Porosity, Permeability and net pay thickness
+0.1       0.15     0.25      					-- Min porosity, average porosity, max porosity
+10        75        250      					-- Min permeability, average permeability, max permeability in md
+10        55        100      					-- Min. net pay, average net pay, max net pay in meters
+PETRO /
+RESPROP /
+ 
+-------------------------------------------------------------------------
+-- Well Specifications
+-------------------------------------------------------------------------
+WELLSPEC
+1200    400      0.15     200      				-- Water depth in m, depth below SB in m, wellbore radiues in m, injection pressure in bar
+WELLSPEC /
+ 
